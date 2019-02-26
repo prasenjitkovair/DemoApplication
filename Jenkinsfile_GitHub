@@ -32,7 +32,7 @@ pipeline
 				        git pull origin master
 						git add .
 						git commit -m "War updated."
-						git push https://prasenjitkovair:Kovair123@github.com/prasenjitkovair/war-repository.git origin master
+						git push https://prasenjitkovair:Kovair123@github.com/prasenjitkovair/war-repository.git origin --all
 					'''
 				}
 				
