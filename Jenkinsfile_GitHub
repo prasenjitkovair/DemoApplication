@@ -32,7 +32,7 @@ pipeline
 				        git config credential.helper store
 						
 						Username for 'https://github.com': prasenjitkovair
-						Password for 'https://USERNAME@github.com': Kovair123
+						Password for 'https://prasenjitkovair@github.com': Kovair123
 				        git pull origin master
 						git add .
 						git commit -m "War updated."
