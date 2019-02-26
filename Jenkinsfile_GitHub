@@ -29,10 +29,14 @@ pipeline
 					//echo '************ Pushing the war files to https://github.com/prasenjitkovair/war-repository.git ************' 
 				    sh '''
 				        cd /home/kovair/Appwar_GitHub
+				        git config credential.helper store
+						
+						Username for 'https://github.com': prasenjitkovair
+						Password for 'https://USERNAME@github.com': Kovair123
 				        git pull origin master
 						git add .
 						git commit -m "War updated."
-						git push https://prasenjitkovair:Kovair123@github.com/prasenjitkovair/war-repository.git origin --all
+						git push origin master
 					'''
 				}
 				
