@@ -29,16 +29,23 @@ pipeline
 					//echo '************ Pushing the war files to https://github.com/prasenjitkovair/war-repository.git ************' 
 				    script
                     {
-                        git credentialsId: 'ab89d67a-d2ee-4cde-b5ba-aaab31181c33', url: 'https://github.com/prasenjitkovair/war-repository.git'
+  							
+  						withCredentials([usernameColonPassword(credentialsId: 'ab89d67a-d2ee-4cde-b5ba-aaab31181c33', variable: 'TestToken')]) 
+  						{
+    						sh '''
+					      		cd /home/kovair/Appwar_GitHub
+				        	
+					        	git pull origin master
+								git add .
+								git commit -m "War updated."
+								git push origin master
+					    	'''
+						}
+
+
+  						
                     }
-				    sh '''
-				        cd /home/kovair/Appwar_GitHub
-				        
-				        git pull origin master
-						git add .
-						git commit -m "War updated."
-						git push origin master
-					'''
+				    
 				}
 				
 				failure
