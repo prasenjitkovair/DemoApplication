@@ -27,6 +27,10 @@ pipeline
 					echo 'Copying the war file and pushing to War Repo'
 					sh 'cp target/*.war /home/kovair/Appwar_GitHub'
 					//echo '************ Pushing the war files to https://github.com/prasenjitkovair/war-repository.git ************' 
+				    script
+                    {
+                        git credentialsId: 'ab89d67a-d2ee-4cde-b5ba-aaab31181c33', url: 'https://github.com/prasenjitkovair/war-repository.git'
+                    }
 				    sh '''
 				        cd /home/kovair/Appwar_GitHub
 				        git config credential.helper store
